@@ -3,14 +3,18 @@ local hideCount = 0
 
 local BLACKLIST = {
     "[bB][oO][oO][sS][tT]",
+    --"[gG]arona"
 }
 
 local SELL_PATTERNS = {
     "[vV]erkauf",
+    "[kK]auf",
     "[wW][tT][sS]",
     "[bB]iete[tn]",
     "[vV][iI][pP]",
     "[rR]abatt",
+    "[sS]ale",
+    "[bB]ooking",
 }
 
 local SELL_TARGETS = {
@@ -41,7 +45,7 @@ local function chat_filter(self, event, msg, author, ...)
         hideCount = hideCount + 1
         hide = true
     end
-    if hide == true and hideCount % 50 == 0 then
+    if hide == true and hideCount % 100 == 0 then
         print("ChatFilter: Hidden " .. hideCount .. " messages")
     end
     return hide
