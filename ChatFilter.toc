@@ -1,4 +1,4 @@
-## Interface: 80300 
+## Interface: 100002 
 ## Title: ChatFilter
 ## Author: Schlemihl
 ## Version: 0.1
