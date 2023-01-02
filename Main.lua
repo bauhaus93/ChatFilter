@@ -15,7 +15,9 @@ local SELL_PATTERNS = {
     "booking",
     "boost",
     "wow gold",
+    "nur gold",
     "nur für gold",
+    "buchung",
     "[1-5][0-9][0-9]? ?k"
 }
 
@@ -25,8 +27,7 @@ local SELL_TARGETS = {
     "nathria",
     "[kc]urve",
     "torgh?ast",
-    "level up",
-    "levelup"
+    "level ?up",
 }
 
 local function filter_blacklist(text, blacklist)
@@ -47,7 +48,7 @@ local function chat_filter(self, event, msg, author, ...)
     if filter_blacklist(msg, BLACKLIST) or
         filter_blacklist_pair(msg, SELL_PATTERNS, SELL_TARGETS) then
         hideCount = hideCount + 1
-        if hideCount % 250 == 0 then
+        if hideCount % 1000 == 0 then
             print("ChatFilter: Hidden " .. hideCount .. " messages")
         end
         return true
